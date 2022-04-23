@@ -5,9 +5,9 @@ const app = express();
 const port = 3000;
 
 //define route to home page
-app.use('/api', routes);
+app.use('/api', routes as express.Router);
 
-app.get('/', (_req, res) => {
+app.get('/', (_req: express.Request, res: express.Response): void => {
   res.send('server is running');
 });
 
